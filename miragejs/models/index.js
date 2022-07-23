@@ -2,7 +2,7 @@
  * Mirage JS guide on Models: https://miragejs.com/docs/data-layer/models
  */
 
-import { Model, hasMany, belongsTo } from 'miragejs';
+import { Model } from 'miragejs';
 
 /*
  * Everytime you create a new resource you have
@@ -12,11 +12,5 @@ import { Model, hasMany, belongsTo } from 'miragejs';
  * Mirage JS guide on Relationships: https://miragejs.com/docs/main-concepts/relationships/
  */
 export default {
-  user: Model.extend({
-    messages: hasMany(),
-  }),
-  messages: Model.extend({
-    user: belongsTo(),
-  }),
   product: Model,
 };
