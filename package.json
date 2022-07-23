@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
+    "@faker-js/faker": "^7.3.0",
     "@nuxtjs/eslint-config": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/tailwindcss": "^4.2.1",
@@ -43,6 +44,7 @@
     "husky": "^7.0.4",
     "jest": "^27.4.4",
     "lint-staged": "^12.1.2",
+    "miragejs": "^0.1.45",
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
     "vue-jest": "^3.0.4"

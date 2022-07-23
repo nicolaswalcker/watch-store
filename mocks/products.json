@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "The Shawshank Redemption",
+    "price": 9.99
+  },
+  {
+    "id": 2,
+    "title": "The Godfather",
+    "price": 12.85
+  },
+  {
+    "id": 3,
+    "title": "The Godfather: Part II",
+    "price": 14.25
+  },
+  {
+    "id": 4,
+    "title": "The Dark Knight",
+    "price": 8.5
+  }
+]
