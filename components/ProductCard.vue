@@ -2,10 +2,11 @@
   <div class="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
     <div
       class="flex items-end justify-end h-56 w-full bg-cover"
-      :style="`background-image: url('${product.image});`"
+      :style="`background-image: url('${product.image}');`"
     >
       <button
         class="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+        @click="addToCart()"
       >
         <svg
           class="h-5 w-5"
@@ -35,6 +36,11 @@ export default {
     product: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$emit('addToCart', { product: this.product });
     },
   },
 };
