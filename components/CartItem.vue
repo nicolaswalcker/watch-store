@@ -7,9 +7,13 @@
         alt=""
       />
       <div class="mx-3">
-        <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+        <h3 class="text-sm text-gray-600">{{ product.title }}</h3>
         <div class="flex items-center mt-2">
-          <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+          <button
+            data-test-id="+"
+            class="text-gray-500 focus:outline-none focus:text-gray-600"
+            @click="increaseQuantity"
+          >
             <svg
               class="h-5 w-5"
               fill="none"
@@ -22,8 +26,14 @@
               <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </button>
-          <span class="text-gray-700 mx-2">2</span>
-          <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+          <span data-test-id="quantity" class="text-gray-700 mx-2">{{
+            quantity
+          }}</span>
+          <button
+            data-test-id="-"
+            class="text-gray-500 focus:outline-none focus:text-gray-600"
+            @click="decreaseQuantity"
+          >
             <svg
               class="h-5 w-5"
               fill="none"
@@ -41,7 +51,7 @@
         </div>
       </div>
     </div>
-    <span class="text-gray-600">20$</span>
+    <span class="text-gray-600">${{ product.price }}</span>
   </div>
 </template>
 
@@ -52,6 +62,19 @@ export default {
     product: {
       type: Object,
       required: true,
+    },
+  },
+  data() {
+    return {
+      quantity: 1,
+    };
+  },
+  methods: {
+    increaseQuantity() {
+      this.quantity++;
+    },
+    decreaseQuantity() {
+      this.quantity > 0 ? this.quantity-- : (this.quantity = 0);
     },
   },
 };

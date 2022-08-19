@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Cart from '@/components/Cart.vue';
-import { makeServer } from '@/miragejs/server';
 import CartItem from '@/components/CartItem.vue';
+import { makeServer } from '@/miragejs/server';
 
 describe('Cart', () => {
   let server;
