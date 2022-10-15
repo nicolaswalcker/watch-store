@@ -23,7 +23,7 @@ describe('Default Layout', () => {
 
   it('should toggle Cart visibility', async () => {
     const { wrapper } = mountLayout();
-    const button = wrapper.find('[data-test-id="toggle-button"]');
+    const button = wrapper.find('[data-testid="toggle-button"]');
 
     await button.trigger('click');
     expect(wrapper.vm.isCartOpen).toBe(true);

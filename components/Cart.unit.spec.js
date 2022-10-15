@@ -48,14 +48,14 @@ describe('Cart', () => {
       },
     });
 
-    expect(wrapper.find('[data-test-id="clear-cart-button"]').exists()).toBe(
-      true
+    expect(wrapper.find('[data-testid="clear-cart-button"]').exists()).toBe(
+      false
     );
   });
 
   it('should emit close event when button gets clicked', async () => {
     const { wrapper } = mountCart();
-    const button = wrapper.find('[data-test-id="close-button"]');
+    const button = wrapper.find('[data-testid="close-button"]');
 
     await button.trigger('click');
 
@@ -101,7 +101,7 @@ describe('Cart', () => {
 
   it('should display a button to clear cart', () => {
     const { wrapper } = mountCart();
-    const button = wrapper.find('[data-test-id="clear-cart-button"]');
+    const button = wrapper.find('[data-testid="clear-cart-button"]');
 
     expect(button.exists()).toBe(true);
   });
@@ -109,7 +109,7 @@ describe('Cart', () => {
   it('should call cart manager clearProducts() when button gets clicked', async () => {
     const { wrapper, cartManager } = mountCart();
     const spy = jest.spyOn(cartManager, 'clearProducts');
-    await wrapper.find('[data-test-id="clear-cart-button"]').trigger('click');
+    await wrapper.find('[data-testid="clear-cart-button"]').trigger('click');
 
     expect(spy).toHaveBeenCalledTimes(1);
   });
