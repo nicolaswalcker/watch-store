@@ -9,14 +9,14 @@
       <div class="mx-3">
         <h3 class="text-sm text-gray-600">{{ product.title }}</h3>
         <button
-          data-test-id="remove-button"
+          data-testid="remove-button"
           @click="$cart.removeProduct(product.id)"
         >
           remover
         </button>
         <div class="flex items-center mt-2">
           <button
-            data-test-id="-"
+            data-testid="-"
             class="text-gray-500 focus:outline-none focus:text-gray-600"
             @click="decreaseQuantity"
           >
@@ -32,11 +32,11 @@
               <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </button>
-          <span data-test-id="quantity" class="text-gray-700 mx-2">{{
+          <span data-testid="quantity" class="text-gray-700 mx-2">{{
             quantity
           }}</span>
           <button
-            data-test-id="+"
+            data-testid="+"
             class="text-gray-500 focus:outline-none focus:text-gray-600"
             @click="increaseQuantity"
           >

@@ -49,14 +49,14 @@ describe('CartItem', () => {
 
   it('should display quantity when product is first displayed', () => {
     const { wrapper } = mountCartItem();
-    const quantity = wrapper.find('[data-test-id="quantity"]');
+    const quantity = wrapper.find('[data-testid="quantity"]');
     expect(quantity.text()).toContain('1');
   });
 
   it('should increase quantity when + button gets clicked', async () => {
     const { wrapper } = mountCartItem();
-    const button = wrapper.find('[data-test-id="+"]');
-    const quantity = wrapper.find('[data-test-id="quantity"]');
+    const button = wrapper.find('[data-testid="+"]');
+    const quantity = wrapper.find('[data-testid="quantity"]');
 
     await button.trigger('click');
     expect(quantity.text()).toContain('2');
@@ -68,8 +68,8 @@ describe('CartItem', () => {
 
   it('should decrease quantity when - button gets clicked', async () => {
     const { wrapper } = mountCartItem();
-    const button = wrapper.find('[data-test-id="-"]');
-    const quantity = wrapper.find('[data-test-id="quantity"]');
+    const button = wrapper.find('[data-testid="-"]');
+    const quantity = wrapper.find('[data-testid="quantity"]');
 
     await button.trigger('click');
     expect(quantity.text()).toContain('0');
@@ -77,8 +77,8 @@ describe('CartItem', () => {
 
   it('should not go to below zero when button - is repeatedly clicked', async () => {
     const { wrapper } = mountCartItem();
-    const button = wrapper.find('[data-test-id="-"]');
-    const quantity = wrapper.find('[data-test-id="quantity"]');
+    const button = wrapper.find('[data-testid="-"]');
+    const quantity = wrapper.find('[data-testid="quantity"]');
 
     await button.trigger('click');
     await button.trigger('click');
@@ -88,14 +88,14 @@ describe('CartItem', () => {
 
   it('should display a button to remove item from cart', () => {
     const { wrapper } = mountCartItem();
-    const button = wrapper.find('[data-test-id="remove-button"]');
+    const button = wrapper.find('[data-testid="remove-button"]');
     expect(button.exists()).toBe(true);
   });
 
   it('should call cart manager removeProduct() when button gets clicked', async () => {
     const { wrapper, cartManager, product } = mountCartItem();
     const spy = jest.spyOn(cartManager, 'removeProduct');
-    await wrapper.find('[data-test-id="remove-button"]').trigger('click');
+    await wrapper.find('[data-testid="remove-button"]').trigger('click');
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(product.id);
   });

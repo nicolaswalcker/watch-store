@@ -4,7 +4,7 @@
     <div v-if="errorMessage === ''" class="container mx-auto px-6">
       <h3 class="text-gray-700 text-2xl font-medium">Wrist Watch</h3>
       <span
-        data-test-id="total-quantity-label"
+        data-testid="total-quantity-label"
         class="mt-3 text-sm text-gray-500"
         >{{ quantityLabel }}</span
       >
@@ -15,6 +15,7 @@
           v-for="product in list"
           :key="product.id"
           :product="product"
+          data-testid="product-card"
         />
       </div>
     </div>

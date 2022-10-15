@@ -1,15 +1,20 @@
 <template>
   <div
+    data-testid="shopping-cart"
     :class="{ hidden: !isOpen }"
     class="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300"
   >
     <div class="flex items-center justify-between">
       <h3 class="text-2xl font-medium text-gray-700">Your cart</h3>
-      <button data-test-id="clear-cart-button" @click="$cart.clearProducts()">
+      <button
+        v-if="hasProducts"
+        data-testid="clear-cart-button"
+        @click="$cart.clearProducts()"
+      >
         clear cart
       </button>
       <button
-        data-test-id="close-button"
+        data-testid="close-button"
         class="text-gray-600 focus:outline-none"
         @click="close"
       >
@@ -31,6 +36,7 @@
       v-for="product in products"
       :key="product.id"
       :product="product"
+      data-testid="cart-item"
     />
     <h3 v-if="!hasProducts" class="text-gray-600 text-lg">Cart is empty</h3>
     <a
